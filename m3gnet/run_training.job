@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 8
+#SBATCH --job-name m3gnet
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+
+source ~/.bashrc
+
+conda activate matgl
+
+srun python3 train_model.py
